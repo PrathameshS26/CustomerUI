@@ -1,0 +1,22 @@
+<div>
+   <div class="row ">
+   <div class="col-md-5">
+   <img src = "assets/Existing customer.png" class = "img-responsive" width = "20%" />
+   <div  class="well hoverwell thumbnail" [routerLink]="['/customers',customerdata.customerId]" >
+    <h2> FirstName : {{customerdata?.customerFirstName | uppercase}}<br/> Lastname: {{customerdata?.customerLastName | uppercase}} </h2>  
+     <div> customerid : {{customerdata?.customerId}}</div>
+     <!--<span>  &nbsp;  </span><br/>-->
+     <span> orgid: {{customerdata?.orgUnit?.orgId}}<br/> orgname : {{customerdata?.orgUnit?.orgName}}<br> Phoneno : {{customerdata?.orgUnit?.phoneNumber}}</span>
+     <!-- <span><img src={{customerdata?.location.imageurl}} width="20"></span>-->
+   
+   <span>  &nbsp;  </span><br/>
+   <span> Postal: {{customerdata?.postal?.postalCodeValue}},<br/>Country:{{customerdata?.postal?.countryname}}<br> State:{{customerdata?.postal?.statename}}<br> City:{{customerdata?.postal?.cityname}}</span> 
+  
+ <!--
+ <span><input type="text" value="Hello" (keypress)="onFocus()"> </span><br/>
+ <span><button [class]= buttonStyle [disabled]=isDisabled (click)="onClick()">Login</button></span>
+ </div> -->
+  
+ </div>
+ </div>
+ </div>

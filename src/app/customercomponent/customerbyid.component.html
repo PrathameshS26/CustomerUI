@@ -1,0 +1,29 @@
+<div>
+    <div class="row ">
+    <div class="col-md-5">
+    <div  class="well hoverwell thumbnail">
+     <h2> FirstName : {{customer?.customerFirstName | uppercase}}<br/>Lastname: {{customer?.customerLastName | uppercase}} </h2>  
+      <div> customerid : {{customer?.customerId}}</div>
+      <span> orgid: {{customer?.orgUnit?.orgId}}<br/> orgname : {{customer?.orgUnit?.orgName}}<br> Phoneno : {{customer?.orgUnit?.phoneNumber}}</span>
+      <!-- <span><img src={{customer?.location.imageurl}} width="20"></span>-->
+    
+    <span>  &nbsp;  </span><br/>
+    <span> Postal: {{customer?.postal?.postalCodeValue}}<br/>Country:{{customer?.postal?.countryname}}<br> State:{{customer?.postal?.statename}}<br> City:{{customer?.postal?.cityname}}</span> 
+   
+  
+  <!--<span><input type="text" value="Hello" (keypress)="onFocus()"> </span><br/>
+  <span><button [class]= buttonStyle [disabled]=isDisabled (click)="onClick()">Login</button></span>
+  </div> -->
+  <div class="row">
+  <div class="col-md-1">
+  <button class="btn btn-primary" title="delete customer"  [routerLink]="['/deletecustomer',customer?.customerId]">Delete</button>
+   
+   
+      <button class="btn btn-primary" title="update customer" (click)="updateCustomer(customer.customerId)">Update</button>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  

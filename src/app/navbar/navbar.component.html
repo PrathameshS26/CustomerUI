@@ -1,0 +1,94 @@
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+  </ul>
+   -->
+   
+  <!-- <div class="tab-content">
+    <div id="home" class="tab-pane fade show active " [routerLink]="['/customers/new']">
+    <button><h3>CREATE CUSTOMER</h3></button>
+  </div>
+    
+    <div id="menu1" class="tab-pane fade show active "[routerLink]="['/customers']">
+      <button><h3>SHOW ALL CUSTOMERS</h3></button>
+    
+    </div>
+    <div id="menu2" class="tab-pane fade show active">
+    <button><h3>ABOUT CUSTOMERS</h3></button>
+      <p>Some content in menu 2.</p>
+    </div> -->
+    
+    <div>
+    <button class="tablink" [routerLink]="['/customers/new']" onclick="openPage('home', this, 'red')">CREATE CUSTOMER</button>
+<button class="tablink"  [routerLink]="['/customers']" onclick="openPage('News', this, 'green')" id="defaultOpen">SHOW ALL CUSTOMERS</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">DETAILS OF CUSTOMER</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">ABOUT US</button>
+  </div>
+  <div id="home" class="tabcontent">
+    <h3>Home</h3>
+    <p>Home is where the heart is..</p>
+  </div>
+  
+  <div id="News" class="tabcontent">
+    <h3>News</h3>
+    <p>Some news this fine day!</p> 
+  </div>
+  
+  <div id="Contact" class="tabcontent">
+    <h3>Contact</h3>
+    <p>Get in touch, or swing by for a cup of coffee.</p>
+  </div>
+  
+  <div id="About" class="tabcontent">
+    <h3>About</h3>
+    <p>Who we are and what we do.</p>
+  </div>
+  <script>
+    function openPage(pageName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+       
+  
+
+
+  <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+      <li class="nav-item active">
+       <a   class=" nav-link btn btn-outline-primary my-1 my-sm-1 mr-sm-2"  [routerLink]="['/customers/new']" >create customer <span class="sr-only">(current)</span></a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/customers']" >All customers</a>
+      </li>
+      
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    
+  </div> -->
+  
+<!-- </nav> -->

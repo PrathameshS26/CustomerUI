@@ -1,0 +1,84 @@
+<head><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">   
+</head>
+      
+       <div class ="container">
+       <div class="row">
+       <h2> CREATE CUSTOMER</h2><br/>
+       <img src = "assets/customer.jpg" class = "img-responsive" width = "10%" />
+       </div>
+       </div>
+<div class="col-md-6 col-md-offset-4 bg-dark text-white text-center" id="login">
+
+  <form #newcustomerForm="ngForm" autocomplete="off" novalidate (ngSubmit)="addCustomer(newcustomerForm.value)">
+    <div class="form-group">
+        <span class="input-group-addon"><i> </i></span>
+        <div class="fa fa-user"> 
+        <div class="row ">
+        <div class="col">
+        <label for="name">Enter First Name:</label>
+        <em *ngIf="newcustomerForm.controls. customerFirstName?.invalid && (newcustomerForm.controls. customerFirstName?.touched)">Required</em>
+  <input  id="FirstName"  required type="text" class="form-control" name="customerFirstName" ngModel placeholder="First name"><br/>
+  </div>
+  <div class="col">
+  <label for="name"> Enter Last Name: </label>
+  <em *ngIf="newcustomerForm.controls. customerLastName?.invalid && (newcustomerForm.controls. customerLastName?.touched)">Required</em>
+<input  id="Lastname" type="text"  required class="form-control" name="customerLastName"  ngModel  placeholder="Last name">
+      </div>
+    </div>
+  </div>
+  </div>
+  <fieldset ngModelGroup="orgUnit">
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i  class="fa-suitcase" > </i></span>
+        <div class="row ">
+        <div class="col">
+        <label for="name">Enter the Organization:</label>
+        <em *ngIf="newcustomerForm.controls.orgName?.invalid && (newcustomerForm.controls.orgName?.touched)">Required</em>
+       <input id="organization" required type="text" class="form-control"  name="orgName"  ngModel  placeholder="Organization Name">
+      </div>
+    </div>
+    </div>
+</div> 
+
+    <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-phone"> </i></span>
+      <div class="row ">
+        <div class="col">
+        <label for="name">Enter PhoneNumber: </label>
+        <em *ngIf="newcustomerForm.controls.phoneNumber?.invalid && (newcustomerForm.controls.phoneNumber?.touched)"   class="alert">Required</em>
+     <input id="phonenumber" required  minlength="10"  type="tel" class="form-control"  name="phoneNumber"   ngModel placeholder="Phone Number">
+    </div>
+  </div>
+  </div>
+  </div>
+  </fieldset>
+  
+  <fieldset ngModelGroup="postal">
+  <div class="form-group">
+  <div class="input-group">
+    <span class="input-group-addon"><i  class="fa fa-address-card"> </i></span>
+    <div class="row ">
+        <div class="col">
+    <label for="postal">Choose a Postalcode:</label>
+    <select id="postal"  ngModel required name="postalCodeValue">
+    <option value="" selected disabled hidden>Select</option>
+      <option value="736182">736182</option>
+      <option value="467899">467899</option>
+      <option value="567897">567897</option>
+      <option value="456788">456788</option>
+    </select>
+  </div>
+</div>
+</div>
+</div>
+</fieldset>
+    <div class="container">
+    <button type="submit" [disabled]=newcustomerForm.invalid   class="btn btn-success">Submit </button>
+      <button type="cancel" class="btn btn-primary" (click)='cancelbutton()'>Cancel</button>
+      </div>
+  </form>
+ <!-- <pre> {{newcustomerForm.value | json}}</pre>-->
+                </div>
