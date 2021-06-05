@@ -18,6 +18,9 @@ export class CustomerService {
   }
       public  getAllcustomers(): Observable<Icustomer[]>{
         //return customers;
+        //Ankita  
+        //67877
+        //new changes done in ankita
         //Observable receives data
        // let obs : Observable<Icustomer[]> = this.httpclient.get<Icustomer[]>(this.url);//this doesn't process the data
       return this.httpclient.get<Icustomer[]>(this.url);
